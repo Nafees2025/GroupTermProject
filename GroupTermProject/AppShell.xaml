@@ -9,4 +9,5 @@
 
     <ShellContent ContentTemplate="{DataTemplate local:MainPage}" Route="HomePage"/>
     <ShellContent ContentTemplate="{DataTemplate local:NewPage1}" Route="CreateAccountPage"/>
+    <!-- <ShellContent ContentTemplate="{DataTemplate local:}" Route="PaymentPage"/> -->
 </Shell>
