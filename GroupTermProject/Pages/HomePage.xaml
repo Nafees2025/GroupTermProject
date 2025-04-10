@@ -2,37 +2,54 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="GroupTermProject.MainPage">
     <ScrollView>
         <VerticalStackLayout>
+
+            <HorizontalStackLayout>
+                <HorizontalStackLayout>
+                    <!--Simple labels for the title of the application-->
+                    <Label Text="MIN"/>
+                    <Label Text="Cleaning Service"/>
+                </HorizontalStackLayout>
+                
+                <HorizontalStackLayout>
+                    <!--Adding all the basic button that will be in the navigation bar at the top of the home page-->
+                    <Button x:Name="HomeButton" Text="Home Page" Clicked="HomeButton_Clicked"/>
+                    <Button x:Name="CreatAccountButton" Text="Create Account" Clicked="CreatAccountButton_Clicked"/>
+                    <Button x:Name="ServicePlansButton" Text="Service Plans" Clicked="ServicePlansButton_Clicked"/>
+                </HorizontalStackLayout>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout>
+                <!--Creating the image tags for our groups images as the owners of the application-->
+                <!--We are still not 100 percent sure on if these images will be us or something else, so this idea might change a bit later on-->
+                <Image x:Name="MauriceLo"/>
+                <Image x:Name="IvanJagroa"/>
+                <Image x:Name="NafeesSultan"/>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout> 
+                <!--Creating labels to display the names of our group members below our images-->
+                <Label Text="Maurice Lo"/>
+                <Label Text="Ivan Jagora"/>
+                <Label Text="Nafees Sultan"/>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout>
+                <!--Creating the labels for the application information paragraph-->
+                <Label Text="MIN Cleaning Services has been in the industry for over 20 years, keeping up with up to date cleaning technology and providing the best care for all house cleaning necessities, such as Windows Cleaning, Carpet Cleaning, and Driveway Pressure Washing. Each service is guaranteed 100% customer satisfaction, and many enjoy our services making them want to return back. It’s"/>
+                <Label Text="MINimal dirt."/>
+            </HorizontalStackLayout>
+
             
-            <!--Simple labels for the title of the application-->
-            <Label Text="MIN" />
-            <Label Text="Cleaning Service"/>
-
-            <!--Adding all the basic button that will be in the navigation bar at the top of the home page-->
-            <Button x:Name="HomeButton" Text="Home Page" Clicked="HomeButton_Clicked"/>
-            <Button x:Name="CreatAccountButton" Text="Create Account" Clicked="CreatAccountButton_Clicked"/>
-            <Button x:Name="ServicePlansButton" Text="Service Plans" Clicked="ServicePlansButton_Clicked"/>
-
-            <!--Creating the image tags for our groups images as the owners of the application-->
-            <!--We are still not 100 percent sure on if these images will be us or something else, so this idea might change a bit later on-->
-            <Image x:Name="MauriceLo"/>
-            <Image x:Name="IvanJagroa"/>
-            <Image x:Name="NafeesSultan"/>
-
-            <!--Creating labels to display the names of our group members below our images-->
-            <Label Text="Maurice Lo"/>
-            <Label Text="Ivan Jagora"/>
-            <Label Text="Nafees Sultan"/>
-
-            <!--Creating the labels for the application information paragraph-->
-            <Label Text="MIN Cleaning Services has been in the industry for over 20 years, keeping up with up to date cleaning technology and providing the best care for all house cleaning necessities, such as Windows Cleaning, Carpet Cleaning, and Driveway Pressure Washing. Each service is guaranteed 100% customer satisfaction, and many enjoy our services making them want to return back. It’s"/>
-            <Label Text="MINimal dirt."/>
-
             <!--Creating all the labels for the footer of the Home Page-->
             <Label Text="Socials"/>
-            <Label Text="Instagram: @MINCleaningServices"/>
-            <Label Text="YouTube: MINCleaningServices"/>
-            <Label Text="Twitter: @MINCleaningServices"/>
-            <Label Text="Facebook: MINCleaningServices"/>
+            <HorizontalStackLayout>
+                <Label Text="Instagram: @MINCleaningServices"/>
+                <Label Text="YouTube: MINCleaningServices"/>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout>
+                <Label Text="Twitter: @MINCleaningServices"/>
+                <Label Text="Facebook: MINCleaningServices"/>
+            </HorizontalStackLayout>
             <Label Text="Copyright © MIN Cleaning Services 2025"/>
             
         </VerticalStackLayout>
