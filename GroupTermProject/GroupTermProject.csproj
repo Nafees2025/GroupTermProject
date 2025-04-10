@@ -65,13 +65,18 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="BusinessLogic\" />
-	</ItemGroup>
-
-	<ItemGroup>
 	  <Compile Update="Pages\HomePage.xaml.cs">
 	    <DependentUpon>HomePage.xaml</DependentUpon>
 	  </Compile>
+	  <Compile Update="Pages\CreateAccountPage.xaml.cs">
+	    <DependentUpon>CreateAccountPage.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Pages\CreateAccountPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	</ItemGroup>
 
 </Project>
