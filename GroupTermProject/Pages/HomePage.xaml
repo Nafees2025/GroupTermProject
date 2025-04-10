@@ -3,6 +3,8 @@
     <ScrollView>
         <VerticalStackLayout>
 
+            <!-- Testing Git Repository > Maurice -->
+            
             <HorizontalStackLayout>
                 <HorizontalStackLayout>
                     <!--Simple labels for the title of the application-->
