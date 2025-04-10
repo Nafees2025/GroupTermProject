@@ -6,4 +6,9 @@ public partial class NewPage1 : ContentPage
 	{
 		InitializeComponent();
 	}
+
+    private void HomeButton_Clicked(object sender, EventArgs e)
+    {
+
+    }
 }
