@@ -66,7 +66,12 @@
 
 	<ItemGroup>
 	  <Folder Include="BusinessLogic\" />
-	  <Folder Include="Pages\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="Pages\HomePage.xaml.cs">
+	    <DependentUpon>HomePage.xaml</DependentUpon>
+	  </Compile>
 	</ItemGroup>
 
 </Project>
