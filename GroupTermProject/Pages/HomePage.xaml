@@ -1,59 +1,128 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="GroupTermProject.MainPage">
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="GroupTermProject.MainPage" 
+             BackgroundColor="#CECECE">
+
+    <!--Using ContentPage.Resources to create a basic styling for the elements in this page-->
+    <ContentPage.Resources>
+        <!--Creating a basic styling for the navigation bar buttons-->
+        <Style TargetType="Button">
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="FontSize" Value="Small"/>
+            <Setter Property="BackgroundColor" Value="#D9D9D9"/>
+            <Setter Property="TextColor" Value="Black"/>
+            <Setter Property="CornerRadius" Value="15"/>
+            <Setter Property="MaximumHeightRequest" Value="60"/>
+            <Setter Property="Margin" Value="10,0,10,0"/>
+        </Style>
+
+        <!--Creating basic styling for the labels-->
+        <Style TargetType="Label">
+            <Setter Property="TextColor" Value="Black"/>
+            <Setter Property="FontSize" Value="Medium"/>
+        </Style>
+
+        <!--Creating basic styling for the Images-->
+        <Style TargetType="Image">
+            <Setter Property="MaximumWidthRequest" Value="600"/>
+            <Setter Property="MaximumHeightRequest" Value="600"/>
+            <Setter Property="HorizontalOptions" Value="Center"/>
+            <Setter Property="Margin" Value="10,20,10,20"/>
+        </Style>
+    </ContentPage.Resources>
+
+    <!-- Start of the Home Page Styling-->
     <ScrollView>
         <VerticalStackLayout>
 
-            <!-- Testing #2 of Git Repository > Maurice -->
-            
-            <HorizontalStackLayout>
-                <HorizontalStackLayout>
-                    <!--Simple labels for the title of the application-->
-                    <Label Text="MIN"/>
-                    <Label Text="Cleaning Service"/>
+            <!--VerticalStackLayout to set the background color alongside allow the use of Grid formating-->
+            <VerticalStackLayout BackgroundColor="#3A3A3A" Padding="5,10,5,10">
+
+                <!--Grid definition for the navigation bar-->
+                <Grid>
+                    <!--Row Definitions-->
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <!--Column Definitions-->
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!--Labels for the title of the application-->
+                    <Label Text="MIN" FontAttributes="Bold,Italic" FontSize="Header" TextColor="#3033FF" FontFamily="Inter" Grid.Column="0" Grid.Row="0"/>
+                    <Label Text="Cleaning Service" VerticalOptions="End" Margin="10,10,20,10" TextColor="White" FontFamily="Inter" TextType="Html" Grid.Column="1" Grid.Row="0"/>
+
+                    <!--Adding all the buttons that will be in the navigation bar at the top of the home page-->
+                    <Button x:Name="HomeButton" Text="Home Page" Clicked="HomeButton_Clicked" Grid.Column="2" Grid.Row="0"/>
+                    <Button x:Name="CreatAccountButton" Text="Create Account"  Clicked="CreatAccountButton_Clicked" Grid.Column="3" Grid.Row="0"/>
+                    <Button x:Name="ServicePlanButton" Text="Service Plans"  Clicked="ServicePlansButton_Clicked" Grid.Column="4" Grid.Row="0"/>
+                </Grid>
+            </VerticalStackLayout>
+
+            <!--Grid definition for the body of the application-->
+            <Grid>
+                <!--Row Definitions-->
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <!--Column Definitions-->
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <!--Image tags to show the types of cleaning services this imaginary company provides-->
+                <!--At the moment we have desided that insted of showing a picture of our faces it would be better to show the user what services this
+                imaginary company provides-->
+                <!--All images where taken from google-->
+                <Image x:Name="WindowCleaning" Source="windowcleaningservice.png" Grid.Column="0" Grid.Row="0"/>
+                <Image x:Name="PowerWashing" Source="powerwashingservice.png" Grid.Column="1" Grid.Row="0"/>
+                <Image x:Name="CarpitCleaning" Source="carpitcleaningservice.png" Grid.Column="2" Grid.Row="0"/>
+
+                <!--Labels to display the names of the servies below the images-->
+                <Label Text="Window Cleaning"  Grid.Column="0" Grid.Row="1" HorizontalOptions="Center"/>
+                <Label Text="Power Washing" Grid.Column="1" Grid.Row="1" HorizontalOptions="Center"/>
+                <Label Text="Carpit Cleaning" Grid.Column="2" Grid.Row="1" HorizontalOptions="Center"/>
+            </Grid>
+
+            <!--Creating the labels for the imaginary company information paragraph in the body of the application-->
+            <Label Text="MIN Cleaning Services has been in the industry for over 20 years, keeping up with up to date cleaning technology and providing the best care for all house cleaning necessities, such as Windows Cleaning, Carpet Cleaning, and Driveway Pressure Washing. Each service is guaranteed 100% customer satisfaction, and many enjoy our services making them want to return back. It’s MINimal price." TextColor="Black" HorizontalOptions="Center" Margin="0,50,0,0" Grid.Row="2" Padding="0,0,0,100"/>
+
+            <!--VerticalStackLayout for all the social information at the bottom of the page-->
+            <VerticalStackLayout BackgroundColor="#3C3C3C" Padding="0,10,0,10">
+
+                <!--Label for the title of the socials section-->
+                <Label Text="Socials" HorizontalOptions="Center" TextColor="White"/>
+
+                <!-- HorizontalStackLayout for the Instagram and Youtube socials to be side-by-side-->
+                <HorizontalStackLayout HorizontalOptions="Center" >
+                    <Label Text="Instagram: @MINCleaningServices" Margin="10,0,20,0" TextColor="White"/>
+                    <Label Text="YouTube: MINCleaningServices" Margin="20,0,10,0" TextColor ="White"/>
                 </HorizontalStackLayout>
-                
-                <HorizontalStackLayout>
-                    <!--Adding all the basic button that will be in the navigation bar at the top of the home page-->
-                    <Button x:Name="HomeButton" Text="Home Page" Clicked="HomeButton_Clicked"/>
-                    <Button x:Name="CreatAccountButton" Text="Create Account" Clicked="CreatAccountButton_Clicked"/>
-                    <Button x:Name="ServicePlansButton" Text="Service Plans" Clicked="ServicePlansButton_Clicked"/>
+
+                <!--HorizontalStackLayout for the Twitter and Facebook socials to be side-by-side-->
+                <HorizontalStackLayout HorizontalOptions="Center" >
+                    <Label Text="Twitter: @MINCleaningServices" Margin="10,0,20,0" TextColor="White"/>
+                    <Label Text="Facebook: MINCleaningServices" Margin="20,0,10,0" TextColor="White"/>
                 </HorizontalStackLayout>
-            </HorizontalStackLayout>
+            </VerticalStackLayout>
 
-            <HorizontalStackLayout>
-                <!--Creating the image tags for our groups images as the owners of the application-->
-                <!--We are still not 100 percent sure on if these images will be us or something else, so this idea might change a bit later on-->
-                <Image x:Name="MauriceLo"/>
-                <Image x:Name="IvanJagroa"/>
-                <Image x:Name="NafeesSultan"/>
-            </HorizontalStackLayout>
+            <!--VerticalStackLayout for the footer of the page, this allows me to set the background color and the padding without having any gaps of the ends-->
+            <VerticalStackLayout  Background="#696969" Padding="0,10,0,10">
+                <Label Text="Copyright © MIN Cleaning Services 2025" Margin="20,0,10,0" TextColor="White" HorizontalOptions="Center" FontSize="Small" Background="#696969" Padding="10,10,10,10"/>
+            </VerticalStackLayout>
 
-            <HorizontalStackLayout> 
-                <!--Creating labels to display the names of our group members below our images-->
-                <Label Text="Maurice Lo"/>
-                <Label Text="Ivan Jagora"/>
-                <Label Text="Nafees Sultan"/>
-            </HorizontalStackLayout>
-
-            <HorizontalStackLayout>
-                <!--Creating the labels for the application information paragraph-->
-                <Label Text="MIN Cleaning Services has been in the industry for over 20 years, keeping up with up to date cleaning technology and providing the best care for all house cleaning necessities, such as Windows Cleaning, Carpet Cleaning, and Driveway Pressure Washing. Each service is guaranteed 100% customer satisfaction, and many enjoy our services making them want to return back. It’s"/>
-                <Label Text="MINimal dirt."/>
-            </HorizontalStackLayout>
-
-            
-            <!--Creating all the labels for the footer of the Home Page-->
-            <Label Text="Socials"/>
-            <HorizontalStackLayout>
-                <Label Text="Instagram: @MINCleaningServices"/>
-                <Label Text="YouTube: MINCleaningServices"/>
-            </HorizontalStackLayout>
-            <HorizontalStackLayout>
-                <Label Text="Twitter: @MINCleaningServices"/>
-                <Label Text="Facebook: MINCleaningServices"/>
-            </HorizontalStackLayout>
-            <Label Text="Copyright © MIN Cleaning Services 2025"/>
-            
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

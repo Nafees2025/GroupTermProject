@@ -1,8 +1,10 @@
-﻿namespace GroupTermProject
+﻿using Windows.Devices.Bluetooth;
+
+namespace GroupTermProject
 {
     public partial class MainPage : ContentPage
     {
-        int count = 0;
+
 
         public MainPage()
         {
@@ -23,6 +25,7 @@
         {
 
         }
+
     }
 
 }
