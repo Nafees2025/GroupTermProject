@@ -43,4 +43,15 @@ public partial class ChooseService : ContentPage
         }
     }
 
+    // Event handler for when the user clicks the Home Page button
+    private void HomeButton_Clicked(object sender, EventArgs e)
+    {
+        Shell.Current.GoToAsync("//HomePage");
+    }
+
+    // Event handler for when the user clicks the Create Account button
+    private void CreatAccountButton_Clicked(object sender, EventArgs e)
+    {
+        Shell.Current.GoToAsync("//CreateAccountPage");
+    }
 }
