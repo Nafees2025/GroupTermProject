@@ -54,9 +54,9 @@
                     <Label Text="Cleaning Service" VerticalOptions="End" Margin="10,10,20,10" TextColor="White" FontFamily="Inter" TextType="Html" Grid.Column="1" Grid.Row="0" FontSize="Medium"/>
 
                     <!--Adding all the buttons that will be in the navigation bar at the top of the home page-->
-                    <Button x:Name="HomeButton" Text="Home Page" Grid.Column="2" Grid.Row="0"/>
+                    <Button x:Name="HomeButton" Text="Home Page" Grid.Column="2" Grid.Row="0" Clicked="HomeButton_Clicked"/>
                     <Button x:Name="CreatAccountButton" Text="Create Account" Grid.Column="3" Grid.Row="0"/>
-                    <Button x:Name="ServicePlanButton" Text="Service Plans"  Grid.Column="4" Grid.Row="0"/>
+                    <Button x:Name="ServicePlanButton" Text="Service Plans"  Grid.Column="4" Grid.Row="0" Clicked="ServicePlanButton_Clicked"/>
                 </Grid>
             </VerticalStackLayout>
 
@@ -72,11 +72,11 @@
                 <Entry x:Name="FirstNameInput" Placeholder="Enter First Name"/>
                 <Entry x:Name="LastNameInput" Placeholder="Enter Last Name"/>
                 <Entry x:Name="EmailInput" Placeholder="Enter Email" />
-                <Entry x:Name="Password" Placeholder="Enter Password" />
+                <Entry x:Name="PasswordInput" Placeholder="Enter Password" />
 
                 <!--HorizontalStackLayout to make chackBox and the label next to one another-->
                 <HorizontalStackLayout>
-                    <CheckBox IsChecked="False" Color="#D9D9D9" Margin="20,0,20,0"/>
+                    <CheckBox x:Name="NewsLetterSubscription" IsChecked="False" Color="#D9D9D9" Margin="20,0,20,0"/>
                     <Label Text="Receive emails about special offers and deals" Margin="0,10,0,0" FontSize="Small" TextColor="White"/>
                 </HorizontalStackLayout>
 
