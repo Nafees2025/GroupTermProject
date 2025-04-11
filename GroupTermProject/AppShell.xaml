@@ -10,6 +10,7 @@
     <ShellContent Title ="Home Page" ContentTemplate="{DataTemplate local:MainPage}" Route="HomePage"/>
     <ShellContent Title ="Create Account Page" ContentTemplate="{DataTemplate local:NewPage1}" Route="CreateAccountPage"/>
     <ShellContent Title ="Payment Infomrtion" ContentTemplate="{DataTemplate local:PaymentInfomation}" Route="PaymentInformation"/>
+    <ShellContent Title ="Choose Service" ContentTemplate="{DataTemplate local:ChooseService}" Route="ChooseService"/>
 
 
 </Shell>
