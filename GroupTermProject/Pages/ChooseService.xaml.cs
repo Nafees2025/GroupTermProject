@@ -21,27 +21,46 @@ public partial class ChooseService : ContentPage
     public void PlanListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
     {
 
-        CleaningPlan plan = PlanListView.SelectedItem as CleaningPlan;
-        planImage.Source = plan.PlanImageFileName;
+            CleaningPlan plan = PlanListView.SelectedItem as CleaningPlan;
+            planImage.Source = plan.PlanImageFileName;
 
     }
 
     public void ChoosePlan_Clicked(object sender, EventArgs e)
     {
-        CleaningPlan plan = PlanListView.SelectedItem as CleaningPlan;
 
-        if (plan == null)
+        if (UserInformation.VerifyAccountCreated == true)
         {
-            return;
+            CleaningPlan plan = PlanListView.SelectedItem as CleaningPlan;
+
+            if (plan == null)
+            {
+                DisplayAlert("Service Error", "No service plan was picked", "Ok");
+            }
+            else
+            {
+                try
+                {
+                    Shell.Current.GoToAsync("//HomePage");
+                    DisplayAlert("Service Choise Confermation", "Your service choise has been condirmed. Thank You!", "Ok");
+                    Shell.Current.GoToAsync("//PaymentInformation");
+                }
+                catch (Exception ex)
+                {
+                    DisplayAlert("Error Message", "There was an error", "Ok");
+                }
+            }
         }
         else
         {
+            DisplayAlert("Error", "Account already created", "Ok");
+            Shell.Current.GoToAsync("//CreateAccountPage");
 
-
-            //confirmation message and return plan information
-            //user.SelectedPlan = plan;
         }
     }
+     
+    
+
 
     // Event handler for when the user clicks the Home Page button
     private void HomeButton_Clicked(object sender, EventArgs e)
@@ -52,6 +71,13 @@ public partial class ChooseService : ContentPage
     // Event handler for when the user clicks the Create Account button
     private void CreatAccountButton_Clicked(object sender, EventArgs e)
     {
-        Shell.Current.GoToAsync("//CreateAccountPage");
+        if (UserInformation.VerifyAccountCreated == false)
+        {
+            Shell.Current.GoToAsync("//CreateAccountPage");
+        }
+        else
+        {
+            DisplayAlert("Error", "Account already created", "Ok");
+        }
     }
 }

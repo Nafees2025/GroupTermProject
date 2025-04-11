@@ -16,15 +16,6 @@
             <Setter Property="MaximumHeightRequest" Value="60"/>
             <Setter Property="Margin" Value="10,0,10,0"/>
         </Style>
-
-        <!--Creating basic styling for the Entrys-->
-        <Style TargetType="Entry">
-            <Setter Property="HeightRequest" Value="50"/>
-            <Setter Property="BackgroundColor" Value="#D9D9D9"/>
-            <Setter Property="Margin" Value="20,10,20,10"/>
-            <Setter Property="TextColor" Value="Black"/>
-            <Setter Property="PlaceholderColor" Value="#AFAFAF"/>
-        </Style>
     </ContentPage.Resources>
 
     <ScrollView>
@@ -61,22 +52,29 @@
 
 
         <VerticalStackLayout>
-                <VerticalStackLayout 
-                    BackgroundColor="Black"
-                    Margin="20,20,20,20">
 
-                <Label 
-                    Text="Pick a Plan"
-                    FontSize="Medium"
-                    VerticalOptions="Center" 
-                    HorizontalOptions="Center" />
-                
-                </VerticalStackLayout>
 
-            <Grid ColumnDefinitions="*,*">
+                <VerticalStackLayout BackgroundColor="#353535" Margin="10,10,10,10"> 
+                <VerticalStackLayout Background="#6B6B6B" Margin="20,20,20,20">
 
-                <Grid Grid.Column="0">
-                    <ListView HorizontalOptions="Start" x:Name="PlanListView" ItemSelected="PlanListView_ItemSelected">
+                    <VerticalStackLayout  BackgroundColor="#353535" Margin="20,20,20,20" Padding="5,5,5,5">
+                        <Label Text="Pick a Plan" FontSize="Medium" VerticalOptions="Center"  HorizontalOptions="Center" TextColor="White" FontAttributes="Bold"/>
+                    </VerticalStackLayout>
+
+                    <!--Grid definition for the navigation bar-->
+                <Grid>
+                    <!--Row Definitions-->
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <!--Column Definitions-->
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <ListView HorizontalOptions="Start" x:Name="PlanListView" ItemSelected="PlanListView_ItemSelected" Grid.Column="0" Grid.Row="0">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell>
@@ -92,31 +90,19 @@
                             </DataTemplate>
                         </ListView.ItemTemplate>
                     </ListView>
-                </Grid>
 
-                <!--service preview image-->
-                
-                <!--TODO: image responsivness-->
-                <!--make page look nicer-->
-                
-                <Image Grid.Column="1"   
-                   Margin="0,0,250,0"
-                   x:Name="planImage" 
-                   HorizontalOptions="End" 
-                   Source="{Binding PlanImageFileName}" 
-                   WidthRequest="450" Aspect="AspectFit"/>
+                    <Image Grid.Column="1" Grid.Row="0" x:Name="planImage" Source="{Binding PlanImageFileName}" Margin="0,0,30,0" BackgroundColor="DimGrey"/>
 
             </Grid>
-
-            <HorizontalStackLayout
-                VerticalOptions="Center"
-                HorizontalOptions="Center">
+                </VerticalStackLayout>
+               
 
                 <!--add requests button-->
-                <Button Text="Choose Plan" FontSize="15" Margin="0,20,0,0" Padding ="300,5,300,5" Clicked="ChoosePlan_Clicked"/>
+                    <Button Text="Choose Plan" FontSize="15" Clicked="ChoosePlan_Clicked" BackgroundColor="#4E4E4E" TextColor="White" WidthRequest="400" Margin="0,0,0,20" Padding="5,5,5,5"/>
 
-            </HorizontalStackLayout>
-        </VerticalStackLayout>
+                </VerticalStackLayout>
+
+            </VerticalStackLayout>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

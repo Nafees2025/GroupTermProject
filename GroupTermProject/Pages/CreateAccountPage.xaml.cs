@@ -11,35 +11,39 @@ public partial class NewPage1 : ContentPage
     // Event handler when the user presses the create button
     private void CreateAccount_Clicked(object sender, EventArgs e)
     {
-        // try message
-        try
-        {
-            // storing all the user inputs from the UI in local varibles
-            string firstName = FirstNameInput.Text;
-            string lastName = LastNameInput.Text;
-            string email = EmailInput.Text;
-            string password = PasswordInput.Text;
-            bool newsLetterSubscription = NewsLetterSubscription.IsChecked;
 
-            // Creating a userInfo object with the account information the user gives in the UI
-            UserInformation userInfo = new UserInformation(firstName, lastName, email, password, newsLetterSubscription, true);
+                try
+                {
 
-            // displaying a message saying that the account has been created
-            DisplayAlert("Account Created", "Your account has been created!", "Ok");
+                // storing all the user inputs from the UI in local varibles
+                string firstName = FirstNameInput.Text;
+                string lastName = LastNameInput.Text;
+                string email = EmailInput.Text;
+                string password = PasswordInput.Text;
+                bool newsLetterSubscription = NewsLetterSubscription.IsChecked;
 
-            FirstNameInput.Text = "";
-            LastNameInput.Text = "";
-            EmailInput.Text = "";
-            PasswordInput.Text = "";
-            NewsLetterSubscription.IsChecked = false;
-        }
+                // Creating a userInfo object with the account information the user gives in the UI
+                UserInformation userInfo = new UserInformation(firstName, lastName, email, password, newsLetterSubscription, true);
 
-        // catch message
-        catch (Exception ex)
-        {
-            DisplayAlert("Error Message", "You have not entered all the information needed.. try agian", "Ok");
-        }
-    }
+                    // displaying a message saying that the account has been created
+                    DisplayAlert("Account Created", "Your account has been created!", "Ok");
+
+                    FirstNameInput.Text = "";
+                    LastNameInput.Text = "";
+                    EmailInput.Text = "";
+                    PasswordInput.Text = "";
+                    NewsLetterSubscription.IsChecked = false;
+
+
+                }
+
+                // catch message
+                catch (Exception ex)
+                {
+                    DisplayAlert("Error Message", "You have not entered all the information needed.. try agian", "Ok");
+                }
+            }
+     
 
     // Event handler for when the user clicks the Home Page button
     private void HomeButton_Clicked(object sender, EventArgs e)

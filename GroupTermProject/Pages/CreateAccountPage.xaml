@@ -60,8 +60,9 @@
                 </Grid>
             </VerticalStackLayout>
 
-            <!-- VerticalStackLayout to create a box that will display the user input boxes-->
-            <VerticalStackLayout BackgroundColor="#6B6B6B" Margin="30,30,30,30">
+            <VerticalStackLayout BackgroundColor="#353535" Margin="10,10,10,10">
+                <!-- VerticalStackLayout to create a box that will display the user input boxes-->
+            <VerticalStackLayout BackgroundColor="#6B6B6B" Margin="20,20,20,20">
 
                 <!--VerticalStackLayout for the styling of the title-->
                 <VerticalStackLayout BackgroundColor="#353535" Margin="10,10,10,10">
@@ -81,8 +82,8 @@
                 </HorizontalStackLayout>
 
                 <!--Create button-->
-                <Button x:Name="CreateAccount" Text="Create" Clicked="CreateAccount_Clicked" BackgroundColor="#4E4E4E" Margin="10,10,10,10" MaximumWidthRequest="450"  TextColor="White"/>
-
+                    <Button x:Name="CreateAccount" Text="Create" Clicked="CreateAccount_Clicked" BackgroundColor="#4E4E4E" Margin="10,10,10,10" MaximumWidthRequest="450"  TextColor="White"/>
+                </VerticalStackLayout>
             </VerticalStackLayout>
         </VerticalStackLayout>
     </ScrollView>
