@@ -134,7 +134,7 @@
                 <VerticalStackLayout Margin="20,20,20,20">
 
                     <!-- Submit Button -->
-                    <Button Background="#4E4E4E" x:Name="submitPayment" MinimumWidthRequest="450" Text="Submit" FontAttributes="Bold" HorizontalOptions="Center" TextColor="White"/>
+                    <Button Background="#4E4E4E" x:Name="submitPayment" Clicked="submitPayment_Clicked" MinimumWidthRequest="450" Text="Submit" FontAttributes="Bold" HorizontalOptions="Center" TextColor="White"/>
 
                 </VerticalStackLayout>
 

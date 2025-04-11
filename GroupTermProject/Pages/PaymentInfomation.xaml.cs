@@ -6,4 +6,9 @@ public partial class PaymentInfomation : ContentPage
 	{
 		InitializeComponent();
 	}
+
+    private void submitPayment_Clicked(object sender, EventArgs e)
+    {
+
+    }
 }
