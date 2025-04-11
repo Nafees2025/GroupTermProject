@@ -2,13 +2,141 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GroupTermProject.PaymentInfomation"
-             Title="PaymentInfomation">
+             Title="PaymentInfomation"
+             BackgroundColor="#CECECE">
+    
+    <ContentPage.Resources>
+        <!--Creating a basic styling for the navigation bar buttons-->
+        <Style TargetType="Button">
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="FontSize" Value="Small"/>
+            <Setter Property="BackgroundColor" Value="#D9D9D9"/>
+            <Setter Property="TextColor" Value="Black"/>
+            <Setter Property="CornerRadius" Value="15"/>
+            <Setter Property="MaximumHeightRequest" Value="60"/>
+            <Setter Property="Margin" Value="10,0,10,0"/>
+        </Style>
+
+        <!--Creating basic styling for the labels-->
+        <Style TargetType="Label">
+            <Setter Property="TextColor" Value="Black"/>
+            <Setter Property="FontSize" Value="Medium"/>
+        </Style>
+
+        <!-- Styling of Entry -->
+        <Style TargetType="Entry">
+            <Setter Property="HeightRequest" Value="50"/>
+            <Setter Property="MaxLength" Value="300"/>
+            <Setter Property="BackgroundColor" Value="#D9D9D9"/>
+            <Setter Property="Margin" Value="20,0,20,20"/>
+            <Setter Property="PlaceholderColor" Value="#AFAFAF"/>
+            <Setter Property="TextColor" Value="Black"/>
+        </Style>
+
+    </ContentPage.Resources>
+
     <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
         
-        <!-- Hello, Testing for the fourth time -->
+        <!--Using ContentPage.Resources to create a basic styling for the elements in this page-->
+        
+
+        <!--VerticalStackLayout to set the background color alongside allow the use of Grid formating-->
+        <VerticalStackLayout BackgroundColor="#3A3A3A" Padding="5,10,5,10">
+
+            <!--Grid definition for the navigation bar-->
+            <Grid>
+                <!--Row Definitions-->
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <!--Column Definitions-->
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <!--Labels for the title of the application-->
+                <Label Text="MIN" FontAttributes="Bold,Italic" FontSize="Header" TextColor="#3033FF" FontFamily="Inter" Grid.Column="0" Grid.Row="0"/>
+                <Label Text="Cleaning Service" VerticalOptions="End" Margin="10,10,20,10" TextColor="White" FontFamily="Inter" TextType="Html" Grid.Column="1" Grid.Row="0"/>
+
+                <!--Adding all the buttons that will be in the navigation bar at the top of the home page-->
+                <Button x:Name="HomeButton" Text="Home Page" Grid.Column="2" Grid.Row="0"/>
+                <Button x:Name="CreatAccountButton" Text="Create Account" Grid.Column="3" Grid.Row="0"/>
+                <Button x:Name="ServicePlanButton" Text="Service Plans" Grid.Column="4" Grid.Row="0"/>
+            </Grid>
+        </VerticalStackLayout>
+
+        
+        <!--  -->
+        <VerticalStackLayout Background="#6B6B6B" Margin="30,30,30,30">
+
+            <VerticalStackLayout Background="#353535" Margin="20,20,20,20">
+                
+                <Label Text="Payment Info" FontAttributes="Bold" HorizontalOptions="Center" TextColor="White" FontSize="Medium"/>
+                
+            </VerticalStackLayout>
+
+            <Grid>
+
+                <!-- Row Definitions -->
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <!-- Column Definitions -->
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- All the entries -->
+
+                <!-- Left Side -->
+                <Entry x:Name="cardFirstName" Placeholder="Enter First Name" Grid.Row="1" Grid.Column="0"/>
+                <Entry x:Name="cardLastName" Placeholder="Enter Last Name" Grid.Row="2" Grid.Column="0"/>
+                <Entry x:Name="userPhoneNum" Placeholder="Enter Phone Number" Grid.Row="3" Grid.Column="0"/>
+                <Entry x:Name="cardDate" Placeholder="Enter Date of Card" Grid.Row="4" Grid.Column="0"/>
+
+                <!-- Right Side -->
+                <Picker x:Name="cardType" TextColor="Black" BackgroundColor="#D9D9D9" Grid.Row="1" Grid.Column="1" Margin="20,0,20,20" HeightRequest="50">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Visa</x:String>
+                            <x:String>Mastercard</x:String>
+                            <x:String>Paypal</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+                
+                <Entry x:Name="cardNum" Placeholder="Enter Card Number" Grid.Row="2" Grid.Column="1"/>
+                <Entry x:Name="cardCVV" Placeholder="Enter Card CVV" Grid.Row="3" Grid.Column="1"/>
+                
+                <HorizontalStackLayout Grid.Row="4" Grid.Column="1">
+                
+                    <DatePicker x:Name="serviceDate" BackgroundColor="#D9D9D9" TextColor="Black" Margin="20,0,10,20" HeightRequest="50" />
+                    <Label Text="&lt; Select Service Date" TextColor="White" Margin="0,8,20,20" FontSize="Small"/>
+                    
+                </HorizontalStackLayout>
+                
+            </Grid>
+
+            <VerticalStackLayout Margin="20,20,20,20">
+
+                <!-- Submit Button -->
+                <Button Background="#4E4E4E" x:Name="submitPayment" MinimumWidthRequest="450" Text="Submit" FontAttributes="Bold" HorizontalOptions="Center" TextColor="White"/>
+
+            </VerticalStackLayout>
+
+        </VerticalStackLayout>
+
     </VerticalStackLayout>
 </ContentPage>

@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace GroupTermProject.BusinessLogic
 {
-    class UserPaymentInfo
+    public class UserPaymentInfo
     {
+
+
+
     }
 }
