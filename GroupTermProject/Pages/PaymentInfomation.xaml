@@ -66,7 +66,7 @@
                     <Label Text="Cleaning Service" VerticalOptions="End" Margin="10,10,20,10" TextColor="White" FontFamily="Inter" TextType="Html" Grid.Column="1" Grid.Row="0"/>
 
                     <!--Adding all the buttons that will be in the navigation bar at the top of the home page-->
-                    <Button x:Name="HomeButton" Text="Home Page" Grid.Column="2" Grid.Row="0"/>
+                    <Button x:Name="HomeButton" Text="Home Page" Clicked="HomeButton_Clicked"  Grid.Column="2" Grid.Row="0"/>
                     <Button x:Name="CreatAccountButton" Text="Create Account" Grid.Column="3" Grid.Row="0"/>
                     <Button x:Name="ServicePlanButton" Text="Service Plans" Grid.Column="4" Grid.Row="0"/>
                 </Grid>

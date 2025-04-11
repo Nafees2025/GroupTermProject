@@ -107,14 +107,14 @@
 
                 <!-- HorizontalStackLayout for the Instagram and Youtube socials to be side-by-side-->
                 <HorizontalStackLayout HorizontalOptions="Center" >
-                    <Label Text="Instagram: @MINCleaningServices" Margin="10,0,20,0" TextColor="White"/>
-                    <Label Text="YouTube: MINCleaningServices" Margin="20,0,10,0" TextColor ="White"/>
+                    <Label Text="Instagram: @MINCleaningServices" Margin="10,0,20,0" TextColor="White" FontSize="Small"/>
+                    <Label Text="YouTube: MINCleaningServices" Margin="20,0,10,0" TextColor ="White" FontSize="Small"/>
                 </HorizontalStackLayout>
 
                 <!--HorizontalStackLayout for the Twitter and Facebook socials to be side-by-side-->
                 <HorizontalStackLayout HorizontalOptions="Center" >
-                    <Label Text="Twitter: @MINCleaningServices" Margin="10,0,20,0" TextColor="White"/>
-                    <Label Text="Facebook: MINCleaningServices" Margin="20,0,10,0" TextColor="White"/>
+                    <Label Text="Twitter: @MINCleaningServices" Margin="10,0,20,0" TextColor="White" FontSize="Small"/>
+                    <Label Text="Facebook: MINCleaningServices" Margin="20,0,10,0" TextColor="White" FontSize="Small"/>
                 </HorizontalStackLayout>
             </VerticalStackLayout>
 

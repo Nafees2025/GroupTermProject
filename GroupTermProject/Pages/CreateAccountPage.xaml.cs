@@ -34,6 +34,7 @@ public partial class NewPage1 : ContentPage
                     PasswordInput.Text = "";
                     NewsLetterSubscription.IsChecked = false;
 
+                    Shell.Current.GoToAsync("//HomePage");
 
                 }
 
