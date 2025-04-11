@@ -50,7 +50,7 @@ public partial class NewPage1 : ContentPage
         // catch message
         catch (Exception ex)
         {
-            DisplayAlert("Error Message", "You have not entered all the information needed.. try agian", "Ok");
+            DisplayAlert("Error Message", "You have not entered all the information needed.. Try again", "Ok");
         }
     }
 
