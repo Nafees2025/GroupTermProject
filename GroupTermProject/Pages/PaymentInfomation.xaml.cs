@@ -71,4 +71,9 @@ public partial class PaymentInfomation : ContentPage
         cardCVV.Text = "";
 		GoToHP();
     }
+
+    private void CreatAccountButton_Clicked(object sender, EventArgs e)
+    {
+		DisplayAlert("Error", "Account has already been created", "Ok");
+    }
 }

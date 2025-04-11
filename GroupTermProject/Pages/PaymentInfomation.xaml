@@ -2,7 +2,6 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GroupTermProject.PaymentInfomation"
-             Title="PaymentInfomation"
              BackgroundColor="#CECECE">
 
     <ContentPage.Resources>
@@ -67,7 +66,7 @@
 
                     <!--Adding all the buttons that will be in the navigation bar at the top of the home page-->
                     <Button x:Name="HomeButton" Text="Home Page" Clicked="HomeButton_Clicked"  Grid.Column="2" Grid.Row="0"/>
-                    <Button x:Name="CreatAccountButton" Text="Create Account" Grid.Column="3" Grid.Row="0"/>
+                    <Button x:Name="CreatAccountButton" Clicked="CreatAccountButton_Clicked" Text="Create Account" Grid.Column="3" Grid.Row="0"/>
                     <Button x:Name="ServicePlanButton" Text="Service Plans" Grid.Column="4" Grid.Row="0"/>
                 </Grid>
             </VerticalStackLayout>
