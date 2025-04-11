@@ -11,4 +11,9 @@ public partial class NewPage1 : ContentPage
     {
 
     }
+
+    private void CreateAccount_Clicked(object sender, EventArgs e)
+    {
+
+    }
 }
